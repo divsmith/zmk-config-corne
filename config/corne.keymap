@@ -20,19 +20,6 @@
                 &kp TAB &kp ESC &kp BKSP        &kp SPACE &kp ENT &trans
                         >;
                 };
-
-//                blank_layer {
-//                       bindings = <
-// &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-// &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-// &trans &trans &trans &trans &trans &trans               &trans &trans &trans &trans &trans &trans
-//                      &trans &trans &trans               &trans &trans &trans
-//                       >;
-//               };
-
-
-
-
                
                 lower_layer {
 // -----------------------------------------------------------------------------------------
