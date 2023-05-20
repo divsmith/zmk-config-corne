@@ -9,7 +9,11 @@
 #include <dt-bindings/zmk/bt.h>
 #include <behaviors.dtsi>
 
-#define SYMBOL 1
+// Layer Definitions
+#define SYMBOLS 1
+#define NUMBERS 2
+
+// Keycode Definitions
 #define HYP LS(LC(LA(LGUI)))
 
 / {
@@ -24,9 +28,9 @@
                         bindings = <&kp>, <&kp>;
                 };
 
-                ht_tp: tap_preferred_hyper {
+                ht_tp: tap_preferred_thumbkeys {
                         compatible = "zmk,behavior-hold-tap";
-                        label = "TAP_PREFERRED_SPACE_HYP";
+                        label = "TAP_PREFERRED_THUMBKEYS";
                         #binding-cells = <2>;
                         tapping-term-ms = <200>;
                         quick-tap-ms = <0>;
@@ -43,16 +47,25 @@
    &trans &kp Q        &kp W &kp E        &kp R       &kp T        &kp Y &kp U       &kp I       &kp O   &kp P           &trans
    &trans &bhm LCTRL A &kp S &bhm LSHFT D &bhm LGUI F &kp G        &kp H &bhm RGUI J &bhm RSFT K &kp L   &bhm RCTRL APOS &trans
    &trans &bhm LALT Z  &kp X &kp C        &kp V       &kp B        &kp N &kp M       &kp COMMA   &kp DOT &bhm RALT FSLH  &trans
-                      &kp TAB &lt SYMBOL ESC &kp BSPC              &ht_tp HYP SPACE &kp RET &kp BSPC
+                      &kp TAB &lt SYMBOLS ESC &kp BSPC              &ht_tp HYP SPACE &lt NUMBERS RET &kp BSPC
                         >;
                 };
 
-                symbols {
+                symbol_layer {
                         bindings = <
 &trans &trans &trans &trans &trans &trans       &trans    &trans    &kp LPAR &kp RPAR &kp GRAVE &trans
 &trans &trans &trans &trans &trans &trans       &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp SEMI  &trans
 &trans &trans &trans &trans &trans &trans       &trans    &trans    &kp LT   &kp GT   &trans    &trans
                      &trans &trans &trans       &trans &trans &trans         
+                        >;
+                };
+
+                number_layer {
+                        bindings = <
+&trans &trans &kp N7 &kp N8 &kp N9 &trans       &trans &trans &trans &trans &trans &trans
+&trans &trans &kp N4 &kp N5 &kp N6 &trans       &trans &trans &trans &trans &trans &trans
+&trans &trans &kp N1 &kp N2 &kp N3 &trans       &trans &trans &trans &trans &trans &trans
+                     &trans &kp N0 &trans       &trans &trans &trans         
                         >;
                 };
 
