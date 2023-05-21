@@ -22,6 +22,17 @@
 #define MEH(key) LS(LC(LA(key)))
 
 / {
+        combos {
+                compatible = "zmk,combos";
+                combo_backspace {
+                        timeout-ms = <50>;
+                        key-positions = <3 4>;
+                        bindings = <&kp BSPC>;
+                }; 
+        };
+};
+
+/ {
         behaviors {
                 bhm: balanced_homerow_mods {
                         compatible = "zmk,behavior-hold-tap";
