@@ -21,6 +21,10 @@
 #define HYPER(key) LS(LC(LA(LG(key))))
 #define MEH(key) LS(LC(LA(key)))
 
+&caps_word {
+        continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS BSPC DEL SYMBOLS>;
+};
+
 / {
         combos {
                 compatible = "zmk,combos";
@@ -38,7 +42,7 @@
 
                 combo_caps_word {
                         timeout-ms = <50>;
-                        key-positions = <16 19>;
+                        key-positions = <15 20>;
                         bindings = <&caps_word>;
                 };
         };
@@ -75,7 +79,7 @@
    &trans &kp Q        &kp W &lt NAV E        &kp R       &kp T        &kp Y &kp U       &kp I       &kp O   &kp P           &trans
    &trans &bhm LCTRL A &kp S &bhm LSHFT D &bhm LGUI F &kp G        &kp H &bhm RGUI J &bhm RSFT K &kp L   &bhm RCTRL APOS &trans
    &trans &bhm LALT Z  &kp X &kp C        &lt ARROWS V       &kp B        &kp N &lt MEDIA M       &kp COMMA   &kp DOT &bhm RALT FSLH  &trans
-                      &kp TAB &lt SYMBOLS ESC &kp BSPC              &ht_tp HYP SPACE &lt NUMBERS RET &kp BSPC
+                      &kp TAB &lt SYMBOLS ESC &kp LSHFT              &ht_tp HYP SPACE &lt NUMBERS RET &trans
                         >;
                 };
 
