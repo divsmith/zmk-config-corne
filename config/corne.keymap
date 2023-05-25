@@ -107,7 +107,7 @@
 
                 symbol_layer {
                         bindings = <
-&trans &trans &trans &trans &trans &trans       &trans    &trans    &kp LPAR &kp RPAR &kp GRAVE &trans
+&trans &trans &trans &trans &trans &trans       &kp BSLH    &kp PIPE    &kp LPAR &kp RPAR &kp GRAVE &trans
 &trans &trans &trans &trans &trans &trans       &kp MINUS &kp EQUAL &ht_tp LBKT LBRC &ht_tp RBKT RBRC &kp SEMI  &trans
 &trans &trans &trans &trans &trans &trans       &trans    &trans    &kp LT   &kp GT   &trans    &trans
                      &trans &trans &trans       &trans &trans &trans         
