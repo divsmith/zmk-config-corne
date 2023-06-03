@@ -10,13 +10,12 @@
 #include <behaviors.dtsi>
 
 // Layer Definitions
-#define SYSTEM 1
-#define SYMBOLS 2
-#define NUMBERS 3
-#define ARROWS 4
-#define NAV 5
-#define MEDIA 6
-#define BLUETOOTH 7
+#define SYMBOLS 1
+#define NUMBERS 2
+#define ARROWS 3
+#define NAV 4
+#define MEDIA 5
+#define BLUETOOTH 6
 
 // Keycode Definitions
 #define HYP LS(LC(LA(LGUI)))
@@ -25,23 +24,6 @@
 
 &caps_word {
         continue-list = <A B C D E F G H I J K L M N O P Q R S T U V W X Y Z UNDERSCORE MINUS BSPC DEL SYMBOLS>;
-};
-
-/ {
-        macros {
-                system_shift: system_shift {
-                        label = "system_shift";
-                        compatible = "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        wait-ms = <0>;
-                        bindings  
-                                = <&macro_press &kp LSHFT &mo SYSTEM>
-                                , <&macro_wait_time 250>
-                                , <&macro_release &kp LSHFT>
-                                , <&macro_pause_for_release>
-                                , <&macro_release &mo SYSTEM>;
-                };
-        };
 };
 
 / {
@@ -88,15 +70,6 @@
    &trans &bhm LCTRL A &kp S &bhm LSHFT D &bhm LGUI F &kp G     &kp H &bhm RGUI J &bhm RSFT K &kp L &bhm RCTRL APOS &trans
    &trans &bhm LALT Z  &kp X &kp C &lt ARROWS V                 &kp B &lt BLUETOOTH N &lt MEDIA M &kp COMMA &kp DOT &bhm RALT FSLH  &trans
                       &trans &lt SYMBOLS ESC &kp LSHFT     &ht_tp HYP SPACE &lt NUMBERS RET &trans
-                        >;
-                };
-
-                system_layer {
-                        bindings = <
-&trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans &trans       &trans &trans &trans &trans &trans &trans
-                     &trans &trans &trans       &ht_tp DEL BSPC &kp RET &trans         
                         >;
                 };
 
