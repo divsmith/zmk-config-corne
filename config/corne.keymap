@@ -59,6 +59,14 @@
                         flavor = "tap-preferred";
                         bindings = <&kp>, <&kp>;
                 };
+
+                sbspc: space_backspace {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "SPACE_BACKSPACE";
+                        #binding-cells = <0>;
+                        bindings = <&ht_tp HYP SPACE>, <&ht_tp DEL BSPC>;
+                        mods = <(MOD_RSFT)>;
+                };
         };
 
         keymap {
@@ -69,7 +77,7 @@
    &trans &kp Q &kp W &lt NAV E &kp R &kp T                     &kp Y &kp U &kp I &kp O &kp P &trans
    &trans &bhm LCTRL A &kp S &bhm LSHFT D &bhm LGUI F &kp G     &kp H &bhm RGUI J &bhm RSFT K &kp L &bhm RCTRL APOS &trans
    &trans &bhm LALT Z  &kp X &kp C &lt ARROWS V                 &kp B &lt BLUETOOTH N &lt MEDIA M &kp COMMA &kp DOT &bhm RALT FSLH  &trans
-                      &trans &lt SYMBOLS ESC &kp LSHFT     &ht_tp HYP SPACE &lt NUMBERS RET &trans
+                      &trans &lt SYMBOLS ESC &kp RSHFT          &sbspc &lt NUMBERS RET &trans
                         >;
                 };
 
